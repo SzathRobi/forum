@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HOME_ROUTE } from 'routes';
+import { HOME_ROUTE, USER_SELECTION_ROUTE } from 'routes';
 
 const routes: Routes = [
   {
     path: '',
     children: [
+      {
+        path: USER_SELECTION_ROUTE,
+        loadChildren: () =>
+          import('./user-selection/user-selection.module').then(
+            (m) => m.UserSelectionModule
+          ),
+      },
       {
         path: HOME_ROUTE,
         loadChildren: () =>
@@ -14,7 +21,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: HOME_ROUTE,
+        redirectTo: USER_SELECTION_ROUTE,
       },
     ],
   },

@@ -8,9 +8,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AppHeaderComponent } from './shared/components/app-header/app-header.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AppHeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

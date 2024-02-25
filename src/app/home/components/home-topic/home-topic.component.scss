@@ -1,12 +1,14 @@
+@import "/src/styles.variables.scss";
+
 .home-topic {
   padding: 16px;
-  border: 1px solid #999;
+  border: $boder-light;
   border-radius: 8px;
   margin-bottom: 16px;
 }
 
 .home-topic__author {
-  color: #666;
+  color: $text-secondary;
   font-size: 14px;
   margin-bottom: 4px;
 }

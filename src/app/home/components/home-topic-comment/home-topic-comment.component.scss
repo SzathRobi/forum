@@ -1,13 +1,15 @@
+@import "/src/styles.variables.scss";
+
 .home-topic-comment {
   width: 100%;
   margin-bottom: 4px;
   padding: 8px;
-  border: 1px solid #999;
+  border: $boder-light;
   border-radius: 4px;
 }
 
 .home-topic-comment__author {
-  color: #666;
+  color: $text-secondary;
   font-size: 14px;
   margin-bottom: 4px;
 }

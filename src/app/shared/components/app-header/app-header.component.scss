@@ -1,0 +1,13 @@
+.app-header {
+  width: 100%;
+  border-bottom: 2px solid black;
+  padding: 16px;
+}
+
+.app-header__nav-list {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
