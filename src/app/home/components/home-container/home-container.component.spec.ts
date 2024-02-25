@@ -18,7 +18,7 @@ describe('HomeContainerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('shoul create', () => {
+  it('should create', () => {
     expect(component).not.toBeNull();
   });
 });

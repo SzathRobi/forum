@@ -1,3 +1,23 @@
-<div>
-  <h1 class="home-container__title">home</h1>
-</div>
+<section aria-labelledby="home-container-title" class="section">
+  <h1 class="home-container__title" id="home-container-title">Forum</h1>
+
+  <div>
+    <ng-container *ngIf="isTopicsLoading$ | async; else error">
+      <h1>Loading....</h1>
+    </ng-container>
+
+    <ng-template #error>
+      <ng-container *ngIf="hasTopicsError$ | async; else content">
+        <h1>Oops, something went wrong. Please try again later.</h1>
+      </ng-container>
+    </ng-template>
+
+    <ng-template #content>
+      <ng-container *ngIf="topics$ | async as topics">
+        <ng-container *ngFor="let topic of topics; trackBy: trackById">
+          <home-topic [topic]="topic" />
+        </ng-container>
+      </ng-container>
+    </ng-template>
+  </div>
+</section>

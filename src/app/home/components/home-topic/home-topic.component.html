@@ -1,0 +1,8 @@
+<div *ngIf="topic" class="home-topic">
+  <p class="home-topic__author">{{ topic.author.name }}</p>
+  <h2 class="home-topic__title">{{ topic.title }}</h2>
+  <p class="home-topic__body">{{ topic.body }}</p>
+  <button class="home-topic__comments-button">
+    {{ topic.comments.length }} comments
+  </button>
+</div>

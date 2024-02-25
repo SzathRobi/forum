@@ -1,0 +1,30 @@
+.home-topic {
+  padding: 16px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.home-topic__author {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.home-topic__title {
+  margin-bottom: 8px;
+}
+
+.home-topic__body {
+  margin-bottom: 4px;
+}
+
+.home-topic__comments-button {
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
