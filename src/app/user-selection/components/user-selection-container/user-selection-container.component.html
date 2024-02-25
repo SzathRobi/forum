@@ -5,4 +5,34 @@
   >
     User selection
   </h1>
+
+  <div class="user-selection__selected-user">
+    <h2>Selected User:</h2>
+    <ng-container *ngIf="selectedUser$ | async as selectedUser">
+      <p>{{ selectedUser.name }}</p>
+    </ng-container>
+  </div>
+
+  <div>
+    <ng-container *ngIf="isUsersLoading$ | async; else error">
+      <h1>Loading....</h1>
+    </ng-container>
+
+    <ng-template #error>
+      <ng-container *ngIf="hasUsersError$ | async; else content">
+        <h1>Oops, something went wrong. Please try again later.</h1>
+      </ng-container>
+    </ng-template>
+
+    <ng-template #content>
+      <ng-container *ngIf="users$ | async as users">
+        <ng-container *ngFor="let user of users">
+          <user-selection-user-card
+            [user]="user"
+            (onSelectUSer)="selectUser($event)"
+          />
+        </ng-container>
+      </ng-container>
+    </ng-template>
+  </div>
 </section>
