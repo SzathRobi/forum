@@ -1,0 +1,16 @@
+<div *ngIf="comment" class="home-topic-comment">
+  <p class="home-topic-comment__author">{{ comment.author.name }}</p>
+  <p class="home-topic-comment__body">{{ comment.body }}</p>
+  <button
+    class="home-topic-comment__comments-button"
+    (click)="toggleCommentBlockVisible()"
+  >
+    {{ comment.comments.length }} comments
+  </button>
+
+  <div *ngIf="isCommentBlockVisible">
+    <ng-container *ngFor="let comment of comment.comments"
+      ><home-topic-comment [comment]="comment" />
+    </ng-container>
+  </div>
+</div>

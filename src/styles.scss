@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+button {
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+}
+
 .section {
   min-height: 100vh;
   padding: 16px;

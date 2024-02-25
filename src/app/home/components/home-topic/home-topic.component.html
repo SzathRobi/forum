@@ -2,7 +2,16 @@
   <p class="home-topic__author">{{ topic.author.name }}</p>
   <h2 class="home-topic__title">{{ topic.title }}</h2>
   <p class="home-topic__body">{{ topic.body }}</p>
-  <button class="home-topic__comments-button">
+  <button
+    class="home-topic__comments-button"
+    (click)="toggleCommentBlockVisible()"
+  >
     {{ topic.comments.length }} comments
   </button>
+
+  <div *ngIf="isCommentBlockVisible">
+    <ng-container *ngFor="let comment of topic.comments"
+      ><home-topic-comment [comment]="comment" />
+    </ng-container>
+  </div>
 </div>

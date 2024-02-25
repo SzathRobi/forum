@@ -10,4 +10,10 @@ import { Topic } from '../../interfaces/topic.interface';
 })
 export class HomeTopicComponent {
   @Input({ required: true }) topic: Topic;
+
+  isCommentBlockVisible = false;
+
+  toggleCommentBlockVisible() {
+    this.isCommentBlockVisible = !this.isCommentBlockVisible;
+  }
 }
