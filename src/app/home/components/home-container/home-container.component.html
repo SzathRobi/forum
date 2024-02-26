@@ -1,4 +1,8 @@
-<section aria-labelledby="home-container-title" class="section">
+<section
+  *ngIf="selectedUser$ | async as selectedUser"
+  aria-labelledby="home-container-title"
+  class="section"
+>
   <h1 class="home-container__title" id="home-container-title">Forum</h1>
 
   <div>
@@ -15,8 +19,16 @@
     <ng-template #content>
       <ng-container *ngIf="topics$ | async as topics">
         <ng-container *ngFor="let topic of topics; trackBy: trackById">
-          <home-topic [topic]="topic" />
+          <home-topic [topic]="topic" [selectedUser]="selectedUser" />
         </ng-container>
+
+        <home-topic-form
+          *ngIf="selectedUser.role === 0 || selectedUser.role === 3"
+          [isTopicFormLoading]="(isTopicFormLoading$ | async) || false"
+          [hasTopicFormError]="(hasTopicFormError$ | async) || false"
+          (submitCommentForm)="onSubmitCommentForm($event, selectedUser)"
+          (submitTopicForm)="onSubmitTopicForm($event, selectedUser)"
+        />
       </ng-container>
     </ng-template>
   </div>

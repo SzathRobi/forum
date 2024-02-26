@@ -1,28 +1,38 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import { homeStoreFeatureName } from 'app/home/constants/store.constants';
-import { TopicsWebRequestState } from 'app/home/interfaces/topics-web-request-state.interface';
 import {
   isErrorState,
   isLoadingState,
   isResultState,
 } from 'app/shared/typeguards/web-request-state.guards';
+import { TopicsState } from '../reducers/topics/topics.state';
 
 export const selectHomeFeature =
-  createFeatureSelector<TopicsWebRequestState>(homeStoreFeatureName);
+  createFeatureSelector<TopicsState>(homeStoreFeatureName);
 
 export const selectTopics = createSelector(
   selectHomeFeature,
-  (state: TopicsWebRequestState) =>
-    state && isResultState(state) ? state.data.topics : undefined
+  (state: TopicsState) =>
+    state && isResultState(state.topics) ? state.topics.data.topics : undefined
 );
 
 export const selectIsTopicsLoading = createSelector(
   selectHomeFeature,
-  (state: TopicsWebRequestState) => isLoadingState(state)
+  (state: TopicsState) => isLoadingState(state.topics)
 );
 
 export const selectHasTopicsError = createSelector(
   selectHomeFeature,
-  (state: TopicsWebRequestState) => isErrorState(state)
+  (state: TopicsState) => isErrorState(state.topics)
+);
+
+export const selectIsTopicFormLoading = createSelector(
+  selectHomeFeature,
+  (state: TopicsState) => isLoadingState(state.topicForm)
+);
+
+export const selectHasTopicFormError = createSelector(
+  selectHomeFeature,
+  (state: TopicsState) => isErrorState(state.topicForm)
 );

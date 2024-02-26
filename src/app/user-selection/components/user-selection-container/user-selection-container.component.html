@@ -29,7 +29,7 @@
         <ng-container *ngFor="let user of users">
           <user-selection-user-card
             [user]="user"
-            (onSelectUSer)="selectUser($event)"
+            (onSelectUSer)="onSelectUser($event)"
           />
         </ng-container>
       </ng-container>

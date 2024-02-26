@@ -28,13 +28,9 @@ export class UserSelectionContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(fetchUsers());
-
-    this.users$.subscribe((user) => {
-      console.log(user);
-    });
   }
 
-  selectUser(selectedUser: User) {
+  onSelectUser(selectedUser: User) {
     this.store.dispatch(setSelectedUser({ selectedUser }));
   }
 }

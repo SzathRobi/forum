@@ -10,8 +10,10 @@
   </button>
 
   <div *ngIf="isCommentBlockVisible">
+    <home-comment-form (submitCommentForm)="onSubmitCommentForm($event)" />
+
     <ng-container *ngFor="let comment of topic.comments"
-      ><home-topic-comment [comment]="comment" />
+      ><home-topic-comment [comment]="comment" [topicId]="topic.id" />
     </ng-container>
   </div>
 </div>

@@ -14,12 +14,8 @@ export const selectUsersFeature = createFeatureSelector<UsersState>(
 
 export const selectUsers = createSelector(
   selectUsersFeature,
-  (state: UsersState) => {
-    console.log('state:', state);
-    return state && isResultState(state.users)
-      ? state.users.data.users
-      : undefined;
-  }
+  (state: UsersState) =>
+    state && isResultState(state.users) ? state.users.data.users : undefined
 );
 
 export const selectSelectedUser = createSelector(

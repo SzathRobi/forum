@@ -1,0 +1,15 @@
+<form [formGroup]="topicForm" (ngSubmit)="onSubmitTopicForm()">
+  <label for="title">Title: </label>
+  <input id="title" type="text" formControlName="title" />
+
+  <label for="last-name">Body: </label>
+  <textarea id="last-name" type="text" formControlName="body"></textarea>
+
+  <button [disabled]="!topicForm.valid">
+    {{ isTopicFormLoading ? "loading..." : "Add topic" }}
+  </button>
+
+  <div *ngIf="hasTopicFormError">
+    <p>Something went wrong. Please try again</p>
+  </div>
+</form>

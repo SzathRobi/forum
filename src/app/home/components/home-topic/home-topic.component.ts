@@ -1,4 +1,15 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Comment } from 'app/home/interfaces/comment.interface';
+import { SubmitCommentForm } from 'app/home/interfaces/submit-comment-body.interface';
+import { addCommentToTopic } from 'app/home/store/actions/topics.actions';
+import { User } from 'app/user-selection/interfaces/user.interface';
 
 import { Topic } from '../../interfaces/topic.interface';
 
@@ -10,10 +21,29 @@ import { Topic } from '../../interfaces/topic.interface';
 })
 export class HomeTopicComponent {
   @Input({ required: true }) topic: Topic;
+  @Input({ required: true }) selectedUser: User;
+
+  @Output() submitCommentForm = new EventEmitter<string>();
 
   isCommentBlockVisible = false;
 
+  constructor(private readonly store: Store) {}
+
   toggleCommentBlockVisible() {
     this.isCommentBlockVisible = !this.isCommentBlockVisible;
+  }
+
+  onSubmitCommentForm({ commentBody }: SubmitCommentForm) {
+    if (this.selectedUser.role === 1) {
+      return;
+    }
+
+    const comment: Omit<Comment, 'id'> = {
+      author: { ...this.selectedUser, id: this.selectedUser.id },
+      body: commentBody,
+      comments: [],
+    };
+
+    this.store.dispatch(addCommentToTopic({ comment, topicId: this.topic.id }));
   }
 }
