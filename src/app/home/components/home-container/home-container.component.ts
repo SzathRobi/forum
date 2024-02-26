@@ -44,23 +44,6 @@ export class HomeContainerComponent implements OnInit {
     this.store.dispatch(addTopic({ author, body, title }));
   }
 
-  onSubmitCommentForm(
-    commentBody: string,
-    { email, id, name, role }: User,
-    topicId: number
-  ) {
-    const comment: Omit<Comment, 'id'> = {
-      author: {
-        email,
-        id,
-        name,
-        role,
-      },
-      body: commentBody,
-      comments: [],
-    };
-  }
-
   trackById(_: number, topic: Topic): number {
     return topic.id;
   }

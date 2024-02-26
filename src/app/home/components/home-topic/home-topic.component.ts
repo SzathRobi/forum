@@ -46,4 +46,8 @@ export class HomeTopicComponent {
 
     this.store.dispatch(addCommentToTopic({ comment, topicId: this.topic.id }));
   }
+
+  onDeleteTopic() {
+    // TODO: implement function
+  }
 }

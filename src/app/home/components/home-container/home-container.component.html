@@ -26,7 +26,6 @@
           *ngIf="selectedUser.role === 0 || selectedUser.role === 3"
           [isTopicFormLoading]="(isTopicFormLoading$ | async) || false"
           [hasTopicFormError]="(hasTopicFormError$ | async) || false"
-          (submitCommentForm)="onSubmitCommentForm($event, selectedUser)"
           (submitTopicForm)="onSubmitTopicForm($event, selectedUser)"
         />
       </ng-container>
