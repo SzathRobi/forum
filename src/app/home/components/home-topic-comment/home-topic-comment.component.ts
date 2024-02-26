@@ -1,15 +1,9 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { SubmitCommentForm } from 'app/home/interfaces/submit-comment-body.interface';
-import { addCommentToComment } from 'app/home/store/actions/topics.actions';
-import { User } from 'app/user-selection/interfaces/user.interface';
 
+import { SubmitCommentForm } from '../../interfaces/submit-comment-body.interface';
+import { addCommentToComment } from '../../store/actions/topics.actions';
+import { User } from '../../../user-selection/interfaces/user.interface';
 import { Comment } from '../../interfaces/comment.interface';
 
 @Component({

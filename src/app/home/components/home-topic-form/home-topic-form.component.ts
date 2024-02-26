@@ -6,12 +6,12 @@ import {
   Output,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { TopicFormValues } from 'app/home/interfaces/topic-form-values.interface';
+
+import { TopicFormValues } from '../../interfaces/topic-form-values.interface';
 
 @Component({
   selector: 'home-topic-form',
   templateUrl: './home-topic-form.component.html',
-  styleUrls: ['./home-topic-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeTopicFormComponent {

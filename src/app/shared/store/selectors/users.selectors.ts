@@ -1,12 +1,12 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { UsersState } from 'app/shared/interfaces/users-state.interface';
 
+import { UsersState } from '../../../shared/interfaces/users-state.interface';
 import {
   isErrorState,
   isLoadingState,
   isResultState,
-} from 'app/shared/typeguards/web-request-state.guards';
-import { usersStoreFeatureName } from 'app/user-selection/constants/store.constants';
+} from '../../../shared/typeguards/web-request-state.guards';
+import { usersStoreFeatureName } from '../../../user-selection/constants/store.constants';
 
 export const selectUsersFeature = createFeatureSelector<UsersState>(
   usersStoreFeatureName

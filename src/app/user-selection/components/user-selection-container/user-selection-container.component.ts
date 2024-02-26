@@ -1,16 +1,16 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { User } from 'app/user-selection/interfaces/user.interface';
+import { User } from '../../../user-selection/interfaces/user.interface';
 import {
   fetchUsers,
   setSelectedUser,
-} from 'app/shared/store/actions/users.actions';
+} from '../../../shared/store/actions/users.actions';
 import {
   selectHasUsersError,
   selectIsUsersLoading,
   selectSelectedUser,
   selectUsers,
-} from 'app/shared/store/selectors/users.selectors';
+} from '../../../shared/store/selectors/users.selectors';
 
 @Component({
   selector: 'user-selection-container',

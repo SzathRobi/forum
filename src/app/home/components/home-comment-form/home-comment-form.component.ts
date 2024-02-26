@@ -6,7 +6,7 @@ import {
   Output,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SubmitCommentForm } from 'app/home/interfaces/submit-comment-body.interface';
+import { SubmitCommentForm } from '../../interfaces/submit-comment-body.interface';
 
 @Component({
   selector: 'home-comment-form',

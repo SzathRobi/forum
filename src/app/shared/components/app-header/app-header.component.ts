@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { HOME_PATH, USER_SELECTION_PATH } from 'routes';
+
+import { HOME_PATH, USER_SELECTION_PATH } from '../../../../routes';
 
 @Component({
   selector: 'app-header',

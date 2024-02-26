@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 
-import { tag } from 'app/home/constants/store.constants';
-import { Author } from 'app/home/interfaces/author.interface';
-import { Comment } from 'app/home/interfaces/comment.interface';
-import { Topic } from 'app/home/interfaces/topic.interface';
+import { tag } from '../../constants/store.constants';
+import { Author } from '../../interfaces/author.interface';
+import { Comment } from '../../interfaces/comment.interface';
+import { Topic } from '../../interfaces/topic.interface';
 
 export interface FetchTopicsSuccess {
   topics: Topic[];

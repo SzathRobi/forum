@@ -6,11 +6,11 @@ import {
   Output,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Comment } from 'app/home/interfaces/comment.interface';
-import { SubmitCommentForm } from 'app/home/interfaces/submit-comment-body.interface';
-import { addCommentToTopic } from 'app/home/store/actions/topics.actions';
-import { User } from 'app/user-selection/interfaces/user.interface';
 
+import { Comment } from '../../interfaces/comment.interface';
+import { SubmitCommentForm } from '../../interfaces/submit-comment-body.interface';
+import { addCommentToTopic } from '../../store/actions/topics.actions';
+import { User } from '../../../user-selection/interfaces/user.interface';
 import { Topic } from '../../interfaces/topic.interface';
 
 @Component({

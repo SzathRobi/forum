@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
-import { tag } from 'app/user-selection/constants/store.constants';
+import { tag } from '../../../user-selection/constants/store.constants';
 
-import { User } from 'app/user-selection/interfaces/user.interface';
+import { User } from '../../../user-selection/interfaces/user.interface';
 
 export interface FetchUsersSuccess {
   users: User[];

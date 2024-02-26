@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { User } from 'app/user-selection/interfaces/user.interface';
+import { User } from '../../interfaces/user.interface';
 
 @Component({
   selector: 'user-selection-user-card',

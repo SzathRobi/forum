@@ -1,19 +1,20 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
-import { homeStoreFeatureName } from 'app/home/constants/store.constants';
+import { homeStoreFeatureName } from '../../constants/store.constants';
 import {
   isErrorState,
   isLoadingState,
   isResultState,
-} from 'app/shared/typeguards/web-request-state.guards';
+} from '../../../shared/typeguards/web-request-state.guards';
 import { TopicsState } from '../reducers/topics/topics.state';
+import { Topic } from '../../interfaces/topic.interface';
 
 export const selectHomeFeature =
   createFeatureSelector<TopicsState>(homeStoreFeatureName);
 
 export const selectTopics = createSelector(
   selectHomeFeature,
-  (state: TopicsState) =>
+  (state: TopicsState): Topic[] | undefined =>
     state && isResultState(state.topics) ? state.topics.data.topics : undefined
 );
 

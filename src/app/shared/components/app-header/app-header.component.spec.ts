@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppHeaderComponent } from './app-header.component';
 
@@ -8,6 +9,7 @@ describe('AppHeaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [AppHeaderComponent],
     }).compileComponents();
   }));
